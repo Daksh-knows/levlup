@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -33,8 +33,9 @@ export default function Home() {
                     Comprehensive Examination Management
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Streamline your examination process with our powerful dashboard. Manage students, teachers, tasks,
-                    and results all in one place.
+                    Streamline your examination process with our powerful
+                    dashboard. Manage students, teachers, tasks, and results all
+                    in one place.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -72,8 +73,12 @@ export default function Home() {
                         <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                       </svg>
                     </div>
-                    <h3 className="text-center text-lg font-medium">User Management</h3>
-                    <p className="text-center text-sm text-muted-foreground">Manage students and teachers with ease</p>
+                    <h3 className="text-center text-lg font-medium">
+                      User Management
+                    </h3>
+                    <p className="text-center text-sm text-muted-foreground">
+                      Manage students and teachers with ease
+                    </p>
                   </div>
                   <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
                     <div className="rounded-full bg-primary/10 p-2">
@@ -94,8 +99,12 @@ export default function Home() {
                         <path d="M9 21V9" />
                       </svg>
                     </div>
-                    <h3 className="text-center text-lg font-medium">Kanban Board</h3>
-                    <p className="text-center text-sm text-muted-foreground">Assign and track tasks efficiently</p>
+                    <h3 className="text-center text-lg font-medium">
+                      Kanban Board
+                    </h3>
+                    <p className="text-center text-sm text-muted-foreground">
+                      Assign and track tasks efficiently
+                    </p>
                   </div>
                   <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
                     <div className="rounded-full bg-primary/10 p-2">
@@ -115,8 +124,12 @@ export default function Home() {
                         <circle cx="12" cy="12" r="10" />
                       </svg>
                     </div>
-                    <h3 className="text-center text-lg font-medium">Timeline</h3>
-                    <p className="text-center text-sm text-muted-foreground">Visualize and manage schedules</p>
+                    <h3 className="text-center text-lg font-medium">
+                      Timeline
+                    </h3>
+                    <p className="text-center text-sm text-muted-foreground">
+                      Visualize and manage schedules
+                    </p>
                   </div>
                   <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
                     <div className="rounded-full bg-primary/10 p-2">
@@ -140,7 +153,9 @@ export default function Home() {
                       </svg>
                     </div>
                     <h3 className="text-center text-lg font-medium">Reports</h3>
-                    <p className="text-center text-sm text-muted-foreground">Generate comprehensive reports</p>
+                    <p className="text-center text-sm text-muted-foreground">
+                      Generate comprehensive reports
+                    </p>
                   </div>
                 </div>
               </div>
@@ -151,11 +166,10 @@ export default function Home() {
       <footer className="border-t py-6 md:py-0">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            © 2023 Examination Dashboard. All rights reserved.
+            © 2025 Examination Dashboard. All rights reserved.
           </p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
