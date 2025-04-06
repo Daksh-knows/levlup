@@ -1,10 +1,17 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Calendar, Clock, Laptop } from "lucide-react"
+import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Calendar, Clock, Laptop } from "lucide-react";
 
 const upcomingExams = [
   {
@@ -37,7 +44,7 @@ const upcomingExams = [
     status: "upcoming",
     readiness: "not-ready",
   },
-]
+];
 
 export function UpcomingOnlineExams() {
   return (
@@ -52,15 +59,15 @@ export function UpcomingOnlineExams() {
                   exam.readiness === "ready"
                     ? "default"
                     : exam.readiness === "system-check-required"
-                      ? "secondary"
-                      : "outline"
+                    ? "secondary"
+                    : "outline"
                 }
               >
                 {exam.readiness === "ready"
                   ? "Ready"
                   : exam.readiness === "system-check-required"
-                    ? "System Check Required"
-                    : "Not Ready"}
+                  ? "System Check Required"
+                  : "Not Ready"}
               </Badge>
             </div>
             <CardTitle>{exam.subject}</CardTitle>
@@ -84,18 +91,17 @@ export function UpcomingOnlineExams() {
           </CardContent>
           <CardFooter>
             <Button asChild className="w-full">
-              <Link href={`/dashboard/online-exams/${exam.id}`}>
+              <Link href={`/dashboard-student/online-exams/${exam.id}`}>
                 {exam.readiness === "ready"
                   ? "Enter Exam"
                   : exam.readiness === "system-check-required"
-                    ? "Complete System Check"
-                    : "Prepare for Exam"}
+                  ? "Complete System Check"
+                  : "Prepare for Exam"}
               </Link>
             </Button>
           </CardFooter>
         </Card>
       ))}
     </div>
-  )
+  );
 }
-

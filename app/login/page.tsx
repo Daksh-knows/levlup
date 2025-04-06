@@ -59,7 +59,7 @@ export default function LoginPage() {
       localStorage.setItem("collegeEmail", data.email);
 
       // Redirect to dashboard
-      router.push("/dashboard");
+      router.push("/dashboard-coe");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Login failed");
     }

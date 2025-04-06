@@ -1,13 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Calendar, CheckCircle2, Download, Eye } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useState } from "react";
+import Link from "next/link";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Calendar, CheckCircle2, Download, Eye } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const answerSheets = [
   {
@@ -50,23 +63,25 @@ const answerSheets = [
     score: "90/100",
     verified: true,
   },
-]
+];
 
 export function AnswerSheetList() {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [filterType, setFilterType] = useState("all")
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterType, setFilterType] = useState("all");
 
   const filteredAnswerSheets = answerSheets.filter((sheet) => {
     const matchesSearch =
       sheet.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      sheet.code.toLowerCase().includes(searchTerm.toLowerCase())
+      sheet.code.toLowerCase().includes(searchTerm.toLowerCase());
 
-    if (filterType === "all") return matchesSearch
-    if (filterType === "scored") return matchesSearch && sheet.score !== "Pending"
-    if (filterType === "pending") return matchesSearch && sheet.score === "Pending"
+    if (filterType === "all") return matchesSearch;
+    if (filterType === "scored")
+      return matchesSearch && sheet.score !== "Pending";
+    if (filterType === "pending")
+      return matchesSearch && sheet.score === "Pending";
 
-    return matchesSearch
-  })
+    return matchesSearch;
+  });
 
   return (
     <div className="space-y-4">
@@ -106,7 +121,9 @@ export function AnswerSheetList() {
               <TableRow key={sheet.id}>
                 <TableCell className="font-medium">
                   <div>{sheet.subject}</div>
-                  <div className="text-sm text-muted-foreground">{sheet.code}</div>
+                  <div className="text-sm text-muted-foreground">
+                    {sheet.code}
+                  </div>
                 </TableCell>
                 <TableCell>
                   <div className="flex items-center gap-2">
@@ -115,7 +132,11 @@ export function AnswerSheetList() {
                   </div>
                 </TableCell>
                 <TableCell>
-                  <Badge variant={sheet.score === "Pending" ? "outline" : "default"}>{sheet.score}</Badge>
+                  <Badge
+                    variant={sheet.score === "Pending" ? "outline" : "default"}
+                  >
+                    {sheet.score}
+                  </Badge>
                 </TableCell>
                 <TableCell>
                   {sheet.verified ? (
@@ -130,7 +151,9 @@ export function AnswerSheetList() {
                 <TableCell className="text-right">
                   <div className="flex justify-end gap-2">
                     <Button variant="ghost" size="icon" asChild>
-                      <Link href={`/dashboard/answer-sheets/view/${sheet.id}`}>
+                      <Link
+                        href={`/dashboard-student/answer-sheets/view/${sheet.id}`}
+                      >
                         <Eye className="h-4 w-4" />
                         <span className="sr-only">View</span>
                       </Link>
@@ -147,6 +170,5 @@ export function AnswerSheetList() {
         </Table>
       </div>
     </div>
-  )
+  );
 }
-

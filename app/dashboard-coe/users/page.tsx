@@ -359,7 +359,7 @@ export default function UsersPage() {
         <h1 className="text-2xl font-bold tracking-tight">User Management</h1>
         <div className="flex items-center gap-2">
           <Button asChild>
-            <Link href="/dashboard/users/register">
+            <Link href="/dashboard-coe/users/register">
               <PlusCircle className="mr-2 h-4 w-4" />
               Register Users
             </Link>

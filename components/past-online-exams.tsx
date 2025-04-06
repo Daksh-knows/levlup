@@ -1,10 +1,17 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Calendar, Clock, Download, FileText } from "lucide-react"
+import Link from "next/link";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Calendar, Clock, Download, FileText } from "lucide-react";
 
 const pastExams = [
   {
@@ -40,7 +47,7 @@ const pastExams = [
     grade: "A-",
     status: "completed",
   },
-]
+];
 
 export function PastOnlineExams() {
   return (
@@ -83,7 +90,9 @@ export function PastOnlineExams() {
               <TableCell className="text-right">
                 <div className="flex justify-end gap-2">
                   <Button variant="ghost" size="icon" asChild>
-                    <Link href={`/dashboard/answer-sheets/view/${exam.id}`}>
+                    <Link
+                      href={`/dashboard-student/answer-sheets/view/${exam.id}`}
+                    >
                       <FileText className="h-4 w-4" />
                       <span className="sr-only">View Answer Sheet</span>
                     </Link>
@@ -99,6 +108,5 @@ export function PastOnlineExams() {
         </TableBody>
       </Table>
     </div>
-  )
+  );
 }
-
